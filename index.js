@@ -1,3 +1,6 @@
+module.exports = Phrase;
+
+
 // Reverses a strong.
 function reverse(string){
     return string.split("").reverse().join("");
