@@ -19,15 +19,17 @@ function Phrase(content) {
   // Returns the letters in content.
   
   this.letters = function letters(){
-   return (this.content.match(/[a-z]/gi) || []).join("");
-   
-   // previous way Array.from(this.content).filter(c => c.match(/[a-z]/i)).join("");
-
+    let theLetters = [];
+    for (let i = 0; i < this.content.length; i++){
+      if (this.content.charAt(i).match(/[a-zA-Z]/)){
+        theLetters.push(this.content.charAt(i));
+      }
+    }
+    return theLetters.join("");
   }
 
   // Returns true if the phrase is a palindrome, false otherwise.
   this.palindrome = function palindrome() {
     return this.processedContent() === this.processedContent().reverse();
   }
-
 }
