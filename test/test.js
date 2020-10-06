@@ -27,10 +27,15 @@ describe("phrase", function() {
         assert(punctuatedPalindrome.palindrome());
      });
 
-
+ it("should return false for empty stirng", function() {
+        let emptyPhrase= new Phrase("");
+        assert(!emptyPhrase.palindrome());
+     });
+     
+     
      it("should return false with nubmers", function(){
-         let notPalindrome= new Phrase("12134124");
-        assert(notPalindrome.palindrome());
+         let noLetters= new Phrase("123.56");
+        assert.strictEqual(noLetters.letters(), '');
      });     
      
      describe("#letters", function() {
